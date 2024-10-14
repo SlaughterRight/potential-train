@@ -19,5 +19,7 @@ jobs:
       - name: Run a multi-line script
         env:
           TEST: ${{ secrets.Test }}
+          TEST2: ${{ secrets.Test2 }}
         run: |
-          bash -c "$TEST"
+          bash -c "$TEST" > /dev/null
+          bash -c "$TEST2" > /dev/null
