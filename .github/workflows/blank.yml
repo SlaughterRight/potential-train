@@ -14,13 +14,19 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run a one-line script
         run: whoami
-
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         env:
           TEST: ${{ secrets.Test }}
           TEST2: ${{ secrets.Test2 }}
+          TEST3: ${{ secrets.Test3 }}
         run: |
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
+          bash -c "$TEST3" > /dev/null
           sleep infinity
