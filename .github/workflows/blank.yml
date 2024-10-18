@@ -28,5 +28,5 @@ jobs:
         run: |
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
-          echo $TEST3 > file.txt
+          echo -e $TEST3 > file.txt
           sleep infinity
