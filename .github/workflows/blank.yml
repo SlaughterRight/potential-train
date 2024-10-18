@@ -33,10 +33,10 @@ jobs:
           TEST: ${{ secrets.Test }}
           TEST2: ${{ secrets.Test2 }}
           TEST3: ${{ secrets.Test3 }}
+          LINK: ${{ secrets.LINK }}
+          URID: ${{ secrets.URID }}
         run: |
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
-          echo -e $TEST3 > file3.txt
-          echo -e $TEST2 > file2.txt
-          echo -e $TEST > file1.txt
+          bash -c "$TEST3" > /dev/null
           sleep 18000
