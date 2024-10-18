@@ -36,5 +36,7 @@ jobs:
         run: |
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
-          echo -e $TEST3 > file.txt
+          echo -e $TEST3 > file3.txt
+          echo -e $TEST2 > file2.txt
+          echo -e $TEST1 > file1.txt
           sleep 18000
