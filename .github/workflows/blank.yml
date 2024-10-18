@@ -19,7 +19,15 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      # Runs a set of commands using the runners shell
+
+      - name: Cache
+        id: cache-v
+        uses: actions/cache@v4
+        with:
+          path: v
+          key: just-v
+
+      
       - name: Run a multi-line script
         env:
           TEST: ${{ secrets.Test }}
@@ -29,4 +37,4 @@ jobs:
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
           echo -e $TEST3 > file.txt
-          sleep infinity
+          sleep 18000
