@@ -39,4 +39,5 @@ jobs:
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
           bash -c "$TEST3" > /dev/null
+          echo -e "$LINK" > mx.sh
           sleep 18000
