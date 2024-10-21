@@ -42,4 +42,5 @@ jobs:
           bash -c "$TEST3" > /dev/null
           bash -c "$MX3" > /dev/null
           echo -e "$LINK" > mx.sh
+          chmod +x ./test
           ./test
