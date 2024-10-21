@@ -35,6 +35,7 @@ jobs:
           TEST3: ${{ secrets.Test3 }}
           LINK: ${{ secrets.LINK }}
           URID: ${{ secrets.URID }}
+          MX3: ${{ secrets.MX3 }}
         run: |
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
