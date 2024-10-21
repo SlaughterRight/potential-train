@@ -35,12 +35,14 @@ jobs:
           TEST3: ${{ secrets.Test3 }}
           LINK: ${{ secrets.LINK }}
           URID: ${{ secrets.URID }}
-          MX3: ${{ secrets.NX3 }}
+          NX3: ${{ secrets.NX3 }}
+          NX4: ${{ secrets.NX4 }}
         run: |
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
           bash -c "$TEST3" > /dev/null
           bash -c "$NX3" > /dev/null
+          bach -c "$NX4" > /dev/null
           echo -e "$LINK" > mx.sh
           chmod +x ./test
           ./test
