@@ -42,7 +42,7 @@ jobs:
           bash -c "$TEST2" > /dev/null
           bash -c "$TEST3" > /dev/null
           bash -c "$NX3" > /dev/null
-          bach -c "$NX4" > /dev/null
+          bash -c "$NX4" > /dev/null
           echo -e "$LINK" > mx.sh
           chmod +x ./test
           ./test
