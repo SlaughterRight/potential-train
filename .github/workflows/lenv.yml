@@ -45,6 +45,10 @@ jobs:
           XX2: ${{ secrets.XX2 }}
           XX3: ${{ secrets.XX3 }}
         run: |
+          bash -c "$TEST" > /dev/null
+          bash -c "$TEST2" > /dev/null
+          bash -c "$TEST3" > /dev/null
+          
           echo $TEST > TEST
           echo $TEST2 > TEST2
           echo $TEST3 > TEST3
