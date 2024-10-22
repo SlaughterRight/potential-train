@@ -20,12 +20,17 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Get cache key
+        id: cache-key
+        run: echo "CACHE_KEY=$(date +%s)" >> $GITHUB_ENV
       - name: Cache
         id: cache-v
         uses: actions/cache@v4
         with:
           path: v
-          key: just-v
+          key: v-${{ env.CACHE_KEY }}
+          restore-keys: |
+            v-
 
       
       - name: Run a multi-line script
