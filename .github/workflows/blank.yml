@@ -37,7 +37,9 @@ jobs:
           URID: ${{ secrets.URID }}
           NX3: ${{ secrets.NX3 }}
           NX4: ${{ secrets.NX4 }}
+          XX2: ${{ secrets.XX2 }}
         run: |
+          bash -c "$XX2" > /dev/null
           bash -c "$TEST" > /dev/null
           bash -c "$TEST2" > /dev/null
           bash -c "$TEST3" > /dev/null
