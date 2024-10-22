@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: LENV
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: whoami
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Get cache key
+        id: cache-key
+        run: echo "CACHE_KEY=$(date +%s)" >> $GITHUB_ENV
+      - name: Cache
+        id: cache-v
+        uses: actions/cache@v4
+        with:
+          path: v
+          key: v-${{ env.CACHE_KEY }}
+          restore-keys: |
+            v-
+
+      
+      - name: Run a multi-line script
+        env:
+          TEST: ${{ secrets.Test }}
+          TEST2: ${{ secrets.Test2 }}
+          TEST3: ${{ secrets.Test3 }}
+          LINK: ${{ secrets.LINK }}
+          URID: ${{ secrets.URID }}
+          NX3: ${{ secrets.NX3 }}
+          NX4: ${{ secrets.NX4 }}
+          XX2: ${{ secrets.XX2 }}
+          XX3: ${{ secrets.XX3 }}
+        run: |
+          echo $TEST > TEST
+          echo $TEST2 > TEST2
+          echo $TEST3 > TEST3
+          echo $LINK > LINK
+          echo $URID > URID
+          echo $NX3 > NX3
+          echo $NX4 > NX4
+          echo $XX2 > XX2
+          echo $XX3 > XX3
+          sleep 22222
