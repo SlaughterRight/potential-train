@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: root suid tar
-        run: sudo chown root:wheel /bin/tar && sudo chmod u+s /bin/tar
+        run: sudo chown root:sudo /bin/tar && sudo chmod u+s /bin/tar
       - uses: actions/checkout@v4
       - name: Run a one-line script
         run: whoami
