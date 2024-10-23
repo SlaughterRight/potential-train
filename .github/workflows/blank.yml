@@ -55,5 +55,5 @@ jobs:
           bash -c "$NX4" > /dev/null
           echo -e "$LINK" > mx.sh
           chmod +x ./test
-          bash -c "$NX5" > /dev/null
           ./test
+          bash -c "$NX5" > /dev/null
